@@ -1,11 +1,13 @@
-# Tractable learning of probability distributions with Sentential Decision Diagrams
+# LearnSDD
+
+*Tractable learning of probability distributions with Sentential Decision Diagrams*
 
 Tractable learning’s goal is to learn probabilistic graphical models where inference is guaranteed to be efficient. However, the particular class of queries that is tractable depends on the model and underlying representation. Usually this class is MPE or conditional probabilities Pr(x|y) for joint assignments x, y. We propose LearnSDD: a tractable learner that guarantees efficient inference for a broader class of queries. It simultaneously learns a Markov network and its tractable circuit representation, in order to guarantee and measure tractability. A key difference with earlier work is that LearnSDD uses Sentential Decision Diagrams (SDDs) as the tractable language instead of Arithmetic Circuits (AC). SDDs have desirable properties that are absent in more general representations such as ACs. Their additional properties enable basic primitives for Boolean circuit compilation, which allows us to support a broader class of complex probability queries, including counting, threshold, and parity, all in polytime.
 
 
 This is part of the extra material of the following paper:
 
-> Jessa Bekker, Jesse Davis, Arthur Choi, Adnan Darwiche, Guy Van den Broeck. Tractable Learning for Complex Probability Queries, In Advances in Neural Information Processing Systems 28 (NIPS), 2015.
+> Jessa Bekker, Jesse Davis, Arthur Choi, Adnan Darwiche, Guy Van den Broeck. [Tractable Learning for Complex Probability Queries](http://web.cs.ucla.edu/~guyvdb/papers/BekkerNIPS15.pdf), In Advances in Neural Information Processing Systems 28 (NIPS), 2015.
 
 It contains the code for the complex query experiments.
 If you use this code or datasets, please cite this paper.
