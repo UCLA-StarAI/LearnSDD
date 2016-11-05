@@ -37,6 +37,7 @@ python code/movieExperiments.py sdd|ac pos|neg|group|parity|conj|wthresh <model_
  
  
 Before running the experiments:
+
 1. compile sdd query c code
 `gcc -std=gnu99 -Wall -o lib/sddQuery sddQueryPackage/sddQuery.c -IsddQueryPackage/include -Llib -lsdd -lm`
 
