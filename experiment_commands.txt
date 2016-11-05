@@ -1,0 +1,64 @@
+# BEFORE RUNNING COMMANDS:
+##########################
+
+# compile sdd query c code
+gcc -std=gnu99 -Wall -o lib/sddQuery sddQueryPackage/sddQuery.c -IsddQueryPackage/include -Llib -lsdd -lm
+
+# put sdd library in library path
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:lib/
+
+# put sdd query and ac query binaries in path
+export PATH=$PATH:lib/
+
+
+# EXPERIMENT COMMANDS
+######################
+
+
+# Voting query
+
+python code/votingExperiments.py sdd sdds/voting/ voting_empty_relllsize-0.1_no_lowd_partial-conj-kld-10_lbfgs_min1_wdata_no_301 out/voting_sdd_ll.csv 600 datasets/voting/voting.test.wdata
+
+python code/votingExperiments.py ac acs/voting.ac voting out/voting_ac_ll.csv 600 datasets/voting/voting.test.wdata
+
+
+# Movie: threshold:  At least 5 positive words
+
+python code/movieExperiments.py sdd pos sdds/movie/ movie_empty_relllsize-0.1_no_lowd_partial-conj-kld-200_lbfgs_min1_wdata_no_695  out/mov_sdd_pos.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+python code/movieExperiments.py ac pos acs/movie.ac movie out/mov_ac_pos.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+
+# Movie: threshold: At least 5 negative words
+
+python code/movieExperiments.py sdd neg sdds/movie/ movie_empty_relllsize-0.1_no_lowd_partial-conj-kld-200_lbfgs_min1_wdata_no_695  out/mov_sdd_neg.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+python code/movieExperiments.py ac neg acs/movie.ac movie out/mov_ac_neg.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+
+# Movie: group comparison: More positive than negative words
+
+python code/movieExperiments.py sdd group sdds/movie/ movie_empty_relllsize-0.1_no_lowd_partial-conj-kld-200_lbfgs_min1_wdata_no_695  out/mov_sdd_group.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+python code/movieExperiments.py ac group acs/movie.ac movie out/mov_ac_group.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+
+# Movie: parity
+
+python code/movieExperiments.py sdd parity sdds/movie/ movie_empty_relllsize-0.1_no_lowd_partial-conj-kld-200_lbfgs_min1_wdata_no_695  out/mov_sdd_parity.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+python code/movieExperiments.py ac parity acs/movie.ac movie out/mov_ac_parity.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+
+# Movie: conjunctive query
+
+python code/movieExperiments.py sdd conj sdds/movie/ movie_empty_relllsize-0.1_no_lowd_partial-conj-kld-200_lbfgs_min1_wdata_no_695  out/mov_sdd_conj.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+python code/movieExperiments.py ac conj acs/movie.ac movie out/mov_ac_conj.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+
+# Movie: weighted treshold
+
+python code/movieExperiments.py sdd wthresh sdds/movie/ movie_empty_relllsize-0.1_no_lowd_partial-conj-kld-200_lbfgs_min1_wdata_no_695  out/mov_sdd_wthresh.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 
+
+python code/movieExperiments.py ac wthresh acs/movie.ac movie out/mov_ac_wthresh.csv 600 datasets/movie/movie.test.wdata datasets/movie/movie.test.wev 

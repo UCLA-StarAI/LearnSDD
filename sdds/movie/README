@@ -1,0 +1,10 @@
+1) Load the vtree (*.vtree)
+2) Initialize a manager with the vtree
+3) Load the sdd (*.sdd) with the manager
+4) Make a WMC manager with the manager and sdd
+5) Set the positive weights of the variables to the values in the *.csv file
+
+
+Weights:
+Line 0 is redundant.
+Line i contains the positive weight of variable i in the sdd

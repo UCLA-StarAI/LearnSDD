@@ -1,0 +1,29 @@
+
+PREREQUISITES
+=============
+
+Download the sdd packages from http://reasoning.cs.ucla.edu/sdd/ and copy he libsdd.a library should be in the 'lib' folder, the sddapi.h should be in the 'include' folder.
+
+
+COMPILATION
+===========
+
+gcc -std=gnu99 -Wall -o sddQuery sddQuery.c -Iinclude -Llib -lsdd -lm
+
+
+
+RUNNING
+=======
+
+export LD_LIBRARY_PATH=lib
+
+./sddQuery conj|dnf|gen <sddpath> <vtreepath> <weightspath> <querypath> [evidencepath]
+
+
+FILE FORMATS
+============
+
+sdd: sdd format as used by the sdd package
+vtree: vtree format as used by the sdd package
+weights: sdd format as used by the sdd package
+  
