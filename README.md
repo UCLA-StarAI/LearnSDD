@@ -13,8 +13,7 @@ It contains the code for the complex query experiments.
 If you use this code or datasets, please cite this paper
 
 
-FOLDER CONTENT
-==============
+## Content ##
 
  - code: code for executing experiments
  - datasets: datasets used for experiments
@@ -26,8 +25,7 @@ FOLDER CONTENT
  - experiment_commands.txt: The commands that need to be run for executing the experiments of the paper [Tractable Learning for Complex Probability Queries, Bekker et al., NIPS, 2015]
 
 
-RUNNING EXPERIMENTS
-===================
+## Running Experiments ##
 
 experiment_commands.txt contains the exact commands for running the experiments.
 
@@ -47,19 +45,16 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:lib/
 export PATH=$PATH:lib/
 
 
-
-THIRD PARTY LIBRARIES
-=====================
+## Third Party Libraries ##
 
 acquery binary from the Libra Toolkit (http://libra.cs.uoregon.edu/)
 sdd library from the SDD Package (http://reasoning.cs.ucla.edu/sdd/)
 
 Both libraries are included in this packages.
 
+## Bibtex ##
 
-BIBTEX
-======
-
+```
 @inproceedings{BekkerNIPS15,
   author = "Bekker, Jessa and Davis, Jesse and Choi, Arthur and Darwiche, Adnan and Van den Broeck, Guy",
   title = "Tractable Learning for Complex Probability Queries",
@@ -67,3 +62,4 @@ BIBTEX
   month = Dec,
   year = "2015",
 }
+```
