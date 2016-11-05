@@ -37,18 +37,18 @@ python code/movieExperiments.py sdd|ac pos|neg|group|parity|conj|wthresh <model_
  
  
 Before running the experiments:
-1) compile sdd query c code
-gcc -std=gnu99 -Wall -o lib/sddQuery sddQueryPackage/sddQuery.c -IsddQueryPackage/include -Llib -lsdd -lm
+1. compile sdd query c code
+`gcc -std=gnu99 -Wall -o lib/sddQuery sddQueryPackage/sddQuery.c -IsddQueryPackage/include -Llib -lsdd -lm`
 
-2) set necessary path variables
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:lib/
-export PATH=$PATH:lib/
+2. set necessary path variables
+`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:lib/`
+`export PATH=$PATH:lib/`
 
 
 ## Third Party Libraries ##
 
-acquery binary from the Libra Toolkit (http://libra.cs.uoregon.edu/)
-sdd library from the SDD Package (http://reasoning.cs.ucla.edu/sdd/)
+- acquery binary from the Libra Toolkit (http://libra.cs.uoregon.edu/)
+- sdd library from the SDD Package (http://reasoning.cs.ucla.edu/sdd/)
 
 Both libraries are included in this packages.
 
